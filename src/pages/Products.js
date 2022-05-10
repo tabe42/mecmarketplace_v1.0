@@ -20,7 +20,7 @@ export const Products = ({ isAuth }) => {
     };
 
     getProducts();
-  }, [deleteProduct]);
+  }, []);
 
   return (
     <div className="flex flex-col space-y-4 mt-4 mx-4 items-center">
