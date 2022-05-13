@@ -15,8 +15,8 @@ export const ItemBar = ({
   productsellerid,
 }) => {
   return (
-    <div className=" flex flex-row justify-between items-center space-x-5  bg-blue-600 text-white  p-4 rounded-md shadow-lg w-1/2 relative">
-      <img src={imageurl} alt="error" className="w-1/3  " />
+    <div className=" flex flex-col space-y-4 md:flex-row justify-between items-center md:space-x-5  bg-blue-600 text-white  p-4 rounded-md shadow-lg w-3/4 md:w-1/2 relative">
+      <img src={imageurl} alt="error" className="h-1/3 md:w-1/3  " />
       <div className="flex flex-col">
         <p>{productname}</p>
         <p>Seller: {name}</p>
@@ -30,7 +30,7 @@ export const ItemBar = ({
             onClick={() => {
               deleteProduct(id);
             }}
-            className="bg-white p-2 rounded-md self-start text-blue-600"
+            className="bg-white p-2 rounded-md self-start text-blue-600 hover:bg-gray-200"
           >
             Delete
           </button>

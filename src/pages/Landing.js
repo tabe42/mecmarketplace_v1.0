@@ -4,17 +4,16 @@ import box from "../images/croppedbox.gif";
 
 export const Landing = () => {
   return (
-    <div className="flex flex-col  md:flex-row justify-center items-center h-screen space-x-40 ">
-      <div>
-        <img
-          className="max-w-sm md:max-w-lg "
-          src={box}
-          alt="pictureofdeliverybox"
-        />
-      </div>
-      <div className="flex flex-col justify-between items-center space-y-4">
-        <p className="text-3xl">Welcome to the MecMarketplace!</p>
-        <p className="max-w-lg">
+    <div className="flex flex-col  md:flex-row justify-center items-center md:h-screen md:space-x-40 mb-2 ">
+      <img
+        className="max-w-sm md:max-w-lg "
+        src={box}
+        alt="pictureofdeliverybox"
+      />
+
+      <div className="flex flex-col justify-center md:items-start items-center space-y-4">
+        <p className="text-3xl"> MecMarketplace</p>
+        <p className="max-w-lg mx-4 md:mx-0">
           Do you have old textbooks lying around which you'd like to sell but
           you're too lazy to find the right people to sell it to? Do you want to
           maybe try and make a sale (and possibly a job) out of your skills?

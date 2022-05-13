@@ -32,7 +32,8 @@ export const AddProduct = ({ isAuth }) => {
   };
 
   const uploadImage = async () => {
-    if (imageinput == null) return;
+    if (imageinput == null || productname == "" || contact == "" || price == "")
+      return;
     const imgname = imageinput.name + v4();
     console.log(imgname);
     setImagename(imgname);
@@ -57,16 +58,15 @@ export const AddProduct = ({ isAuth }) => {
     <div className="flex h-screen ">
       <div className="m-auto">
         <div className="flex flex-col space-y-4 justify-center   bg-gray-100  shadow-md rounded-md p-8 w-fit h-fit">
-          <div>
-            <input
-              required
-              id="files"
-              type="file"
-              onChange={(e) => {
-                setImageinput(e.target.files[0]);
-              }}
-            />
-          </div>
+          <input
+            required
+            id="files"
+            type="file"
+            onChange={(e) => {
+              setImageinput(e.target.files[0]);
+            }}
+          />
+
           <input
             required
             className="border-2 p-2 rounded-md"

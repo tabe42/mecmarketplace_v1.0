@@ -25,11 +25,11 @@ function App() {
     <BrowserRouter>
       <div className="font-mono flex flex-col justify-center">
         <nav>
-          <div className="flex flex-row justify-between py-2 px-4 bg-blue-600 text-white text-xl items-center sticky top-0">
-            <Link to="/" className="text-xl">
+          <div className="flex  flex-col md:flex-row justify-between py-2 px-4 bg-blue-600 text-white text-xl items-center sticky top-0">
+            <Link to="/" className="text-2xl">
               mecmarketplace
             </Link>
-            <div className="flex flex-row space-x-10 justify-center items-center">
+            <div className="flex flex-col md:flex-row md:space-x-10 justify-center items-center">
               <Link to="/products">Browse</Link>
               {!isAuth ? (
                 <Link to="/login">Login</Link>

@@ -47,7 +47,7 @@ export const Products = ({ isAuth }) => {
   });
 
   return (
-    <div className="flex flex-col space-y-4 mt-4 mx-4 items-center">
+    <div className="flex flex-col space-y-4 mt-4 mx-4 items-center mb-4">
       <div className=" flex flex-row justify-between px-2 items-center border-2 w-1/2 rounded-md">
         <input
           className=" p-1 rounded-md w-full focus:outline-none "
