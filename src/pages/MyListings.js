@@ -1,14 +1,33 @@
-import { deleteDoc, doc, getDoc, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { collection } from "firebase/firestore";
-import { db, storage } from "../firebase-config";
-import { ItemBar } from "../components/ItemBar";
+import { auth, db, storage } from "../firebase-config";
+import {
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  getDoc,
+} from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
+import { ItemBar } from "../components/ItemBar";
 
-export const Products = ({ isAuth }) => {
+export const MyListings = ({ isAuth }) => {
   const [productList, setProductList] = useState([]);
   const [randstate, setRandstate] = useState(0);
-  const [query, setQuery] = useState("");
+
+  const productCollectionRef = collection(db, "products");
+  useEffect(() => {
+    const getProducts = async () => {
+      const data = await getDocs(productCollectionRef);
+      console.log("hi", data);
+      setProductList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    getProducts();
+  }, [randstate]);
+
+  const filteredproductList = productList.filter((product) => {
+    return product.seller.id === auth.currentUser.uid;
+  });
   const deleteProduct = async (pid) => {
     const productDoc = doc(db, "products", pid);
     const docSnap = await getDoc(productDoc);
@@ -31,36 +50,8 @@ export const Products = ({ isAuth }) => {
     setRandstate(randstate + 1);
   };
 
-  const productCollectionRef = collection(db, "products");
-  useEffect(() => {
-    const getProducts = async () => {
-      const data = await getDocs(productCollectionRef);
-      console.log("hi", data);
-      setProductList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
-    getProducts();
-  }, [randstate]);
-
-  const filteredproductList = productList.filter((product) => {
-    return product.productname.includes(query);
-  });
-
   return (
-    <div className="flex flex-col space-y-4 mt-4 mx-4 items-center">
-      <div className=" flex flex-row justify-between px-2 items-center border-2 w-1/2 rounded-md">
-        <input
-          className=" p-1 rounded-md w-full focus:outline-none "
-          placeholder="search..."
-          onChange={(e) => {
-            setQuery(e.target.value);
-          }}
-        />
-        <div className="flex flex-row space-x-2 items-center justify-center">
-          <p className="">&#128269;</p>
-        </div>
-      </div>
-
+    <div className="flex flex-col justify-center items-center space-y-4 mt-4">
       {filteredproductList.map((product) => {
         return (
           <ItemBar

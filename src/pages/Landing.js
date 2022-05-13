@@ -4,11 +4,15 @@ import box from "../images/croppedbox.gif";
 
 export const Landing = () => {
   return (
-    <div className="flex flex-row justify-center items-center h-screen space-x-40 ">
+    <div className="flex flex-col  md:flex-row justify-center items-center h-screen space-x-40 ">
       <div>
-        <img className=" max-w-lg " src={box} alt="pictureofdeliverybox" />
+        <img
+          className="max-w-sm md:max-w-lg "
+          src={box}
+          alt="pictureofdeliverybox"
+        />
       </div>
-      <div className="flex flex-col justify-between space-y-4">
+      <div className="flex flex-col justify-between items-center space-y-4">
         <p className="text-3xl">Welcome to the MecMarketplace!</p>
         <p className="max-w-lg">
           Do you have old textbooks lying around which you'd like to sell but

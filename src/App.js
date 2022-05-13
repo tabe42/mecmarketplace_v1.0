@@ -8,6 +8,8 @@ import { Login } from "./pages/Login";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
+import { MyProducts } from "./pages/MyProducts";
+import { MyListings } from "./pages/MyListings";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -21,19 +23,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="font-mono flex flex-col">
+      <div className="font-mono flex flex-col justify-center">
         <nav>
           <div className="flex flex-row justify-between py-2 px-4 bg-blue-600 text-white text-xl items-center sticky top-0">
             <Link to="/" className="text-xl">
               mecmarketplace
             </Link>
-            <div className="flex flex-row space-x-10">
+            <div className="flex flex-row space-x-10 justify-center items-center">
               <Link to="/products">Browse</Link>
               {!isAuth ? (
                 <Link to="/login">Login</Link>
               ) : (
                 <>
                   <Link to="/addProduct">Add Product</Link>
+                  <Link to="/mylistings">My Listings </Link>
                   <button onClick={signUserOut}>Logout</button>
                 </>
               )}
@@ -45,6 +48,7 @@ function App() {
           <Route path="/products" element={<Products isAuth={isAuth} />} />
           <Route path="/addproduct" element={<AddProduct isAuth={isAuth} />} />
           <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+          <Route path="/mylistings" element={<MyListings isAuth={isAuth} />} />
         </Routes>
       </div>
     </BrowserRouter>
