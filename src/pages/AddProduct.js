@@ -32,7 +32,7 @@ export const AddProduct = ({ isAuth }) => {
   };
 
   const uploadImage = async () => {
-    if (imageinput == null || productname == "" || contact == "" || price == "")
+    if (imageinput === null || productname === "" || contact === "" || price === "")
       return;
     const imgname = imageinput.name + v4();
     console.log(imgname);

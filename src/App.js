@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { Navbar } from "./components/Navbar";
 import { Landing } from "./pages/Landing";
 import { Products } from "./pages/Products";
 import { AddProduct } from "./pages/AddProduct";
@@ -8,7 +7,6 @@ import { Login } from "./pages/Login";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
-import { MyProducts } from "./pages/MyProducts";
 import { MyListings } from "./pages/MyListings";
 
 function App() {
