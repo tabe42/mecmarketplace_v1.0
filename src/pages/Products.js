@@ -43,7 +43,7 @@ export const Products = ({ isAuth }) => {
   }, [randstate]);
 
   const filteredproductList = productList.filter((product) => {
-    return product.productname.includes(query);
+    return product.productname.toLowerCase().includes(query);
   });
 
   return (
