@@ -51,7 +51,7 @@ export const MyListings = ({ isAuth }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center space-y-4 mt-4">
+    <div className="flex flex-col justify-center items-center space-y-4 mt-4 block">
       {filteredproductList.map((product) => {
         return (
           <ItemBar

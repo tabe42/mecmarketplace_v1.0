@@ -23,10 +23,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="font-mono flex flex-col justify-center">
-        <nav>
-          <div className="flex  flex-col md:flex-row justify-between py-2 px-4 bg-blue-600 text-white text-xl items-center sticky top-0">
-            <Link to="/" className="text-2xl">
+      <div className="font-mono flex flex-col justify-center bg-gradient-to-tr from-yellow-400 to-yellow-300">
+        <nav className=" sticky top-0">
+          <div className="flex text-2xl flex-col md:flex-row justify-between py-4  px-4 bg-gray-800 text-white text-xl items-center sticky top-0">
+            <Link to="/" className="">
               mecmarketplace
             </Link>
             <div className="flex flex-col md:flex-row md:space-x-10 justify-center items-center">

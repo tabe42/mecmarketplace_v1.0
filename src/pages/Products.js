@@ -9,6 +9,9 @@ export const Products = ({ isAuth }) => {
   const [productList, setProductList] = useState([]);
   const [randstate, setRandstate] = useState(0);
   const [query, setQuery] = useState("");
+  
+  
+  
   const deleteProduct = async (pid) => {
     const productDoc = doc(db, "products", pid);
     const docSnap = await getDoc(productDoc);
@@ -16,8 +19,8 @@ export const Products = ({ isAuth }) => {
     const tobedeletedname = docSnap.data().imagename;
     console.log("name to be deleted", tobedeletedname);
 
-    // console.log("deleted doc:", productDoc);
-
+    // console.log("deleted doc:", productDoc); 
+   
     await deleteDoc(productDoc);
     const imagereference = ref(storage, `images/${tobedeletedname}`);
     // Delete the file
@@ -41,22 +44,26 @@ export const Products = ({ isAuth }) => {
 
     getProducts();
   }, [randstate]);
-
+  
+  
+  //Search bar
   const filteredproductList = productList.filter((product) => {
     return product.productname.toLowerCase().includes(query);
   });
 
+  
+  
   return (
-    <div className="flex flex-col space-y-4 mt-4 mx-4 items-center mb-4">
-      <div className=" flex flex-row justify-between px-2 items-center border-2 w-1/2 rounded-md">
+    <div className="flex flex-col space-y-4 mt-4 mx-4 items-center mb-4 ">
+      <div className=" flex flex-row justify-between px-2 items-center text-xl py-4 border-1 bg-white shadow-lg mt-4 w-1/2 rounded-md">
         <input
           className=" p-1 rounded-md w-full focus:outline-none "
-          placeholder="search..."
+          placeholder=" search..."
           onChange={(e) => {
             setQuery(e.target.value);
           }}
         />
-        <div className="flex flex-row space-x-2 items-center justify-center">
+        <div className="flex flex-row space-x-2 items-center justify-center opacity-50">
           <p className="">&#128269;</p>
         </div>
       </div>
