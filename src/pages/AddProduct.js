@@ -59,15 +59,16 @@ export const AddProduct = ({ isAuth }) => {
       <div className="m-auto">
         <div className="flex flex-col space-y-4 justify-center   bg-gray-100  shadow-md rounded-md p-8 w-fit h-fit">
           <input
+            className="border-2 p-2 rounded-md bg-white"
             required
             id="files"
             type="file"
             onChange={(e) => {
               setImageinput(e.target.files[0]);
+              console.log(e.target.files[0])
             }}
-          />
-
-          <input
+            />      
+           <input
             required
             className="border-2 p-2 rounded-md"
             placeholder="Name of product"

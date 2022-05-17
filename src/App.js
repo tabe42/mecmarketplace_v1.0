@@ -22,8 +22,9 @@ function App() {
   };
 
   return (
+    <div className="min-h-screen font-mono flex flex-col bg-gradient-to-tr from-yellow-400 to-yellow-300 pb-20 overflow-auto">
     <BrowserRouter>
-      <div className="font-mono flex flex-col justify-center bg-gradient-to-tr from-yellow-400 to-yellow-300">
+      <div className="font-mono flex flex-col justify-center  pb-20">
         <nav className=" sticky top-0">
           <div className="flex text-2xl flex-col md:flex-row justify-between py-4  px-4 bg-gray-800 text-white text-xl items-center sticky top-0">
             <Link to="/" className="">
@@ -33,8 +34,8 @@ function App() {
               <Link to="/products">Browse</Link>
               {!isAuth ? (
                 <Link to="/login">Login</Link>
-              ) : (
-                <>
+                ) : (
+                  <>
                   <Link to="/addProduct">Add Product</Link>
                   <Link to="/mylistings">My Listings </Link>
                   <button onClick={signUserOut}>Logout</button>
@@ -52,6 +53,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+  </div>
   );
 }
 
