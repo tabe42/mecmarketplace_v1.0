@@ -85,7 +85,7 @@ export const AddProduct = ({ isAuth }) => {
           />
           <input
             required
-            type="text"
+            type="number"
             placeholder="Price"
             className="border-2 p-2 rounded-md"
             onChange={(e) => {
