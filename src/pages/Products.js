@@ -48,7 +48,7 @@ export const Products = ({ isAuth }) => {
   
   //Search bar
   const filteredproductList = productList.filter((product) => {
-    return product.productname.toLowerCase().includes(query);
+    return product.productname.toLowerCase().includes(query.toLowerCase());
   });
 
   
