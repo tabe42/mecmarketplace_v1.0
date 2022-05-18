@@ -16,6 +16,7 @@ function App() {
       localStorage.clear();
       setIsAuth(false);
       window.location.pathname = "/";
+      navigate("/")
     });
   };
 
