@@ -54,8 +54,8 @@ export const Products = ({ isAuth }) => {
   
   
   return (
-    <div className="flex flex-col space-y-4 mt-4 mx-4 items-center mb-4 ">
-      <div className=" flex flex-row justify-between px-2 items-center text-xl py-4 border-1 bg-white shadow-lg mt-4 w-1/2 rounded-md">
+    <div className="flex flex-col space-y-4 mt-1 md:mt-4 mx-4 items-center mb-4 ">
+      <div className=" flex flex-row justify-between px-2 items-center text-xl py-4 border-1 bg-white shadow-lg mt-4 w-full md:w-1/2 rounded-md">
         <input
           className=" p-1 rounded-md w-full focus:outline-none "
           placeholder=" search..."

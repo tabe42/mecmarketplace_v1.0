@@ -16,10 +16,10 @@ export const Login = ({ setIsAuth }) => {
   };
 
   return (
-    <div className="max-w-[800px] w-full flex flex-col justify-center items-center space-y-2 md:space-x-4 p-4  md:h-screen md:w-full md:mt-[-50px] mx-auto">
-      <div className="flex flex-col justify-center items-center">
+    <div className="max-w-[800px] w-full flex flex-col justify-center items-center space-y-2 md:space-x-4 p-4  md:h-screen md:w-full md:mt-[-50px] mx-auto ">
+      <div className="flex flex-col justify-center items-center bg-white p-10 py-24 rounded-2xl shadow-xl">
         <img
-          className=" md:h-auto w-1/2 md:w-1/3"
+          className=" md:h-auto md:w-1/2 md:scale-125 mt-12 mb-20 "
           src={conveyorbox}
           alt="box"
         />

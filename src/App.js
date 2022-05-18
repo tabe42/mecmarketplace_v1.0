@@ -22,9 +22,9 @@ function App() {
   return (
     <div className="min-h-screen font-mono flex flex-col bg-gradient-to-tr from-yellow-400 to-yellow-300 pb-20">
     <BrowserRouter>
-      <div className="font-mono flex flex-col justify-center  pb-20">
+      <div className="font-mono md:flex flex-col justify-center  pb-20">
         <nav className=" sticky top-0">
-          <div className="flex text-2xl flex-col md:flex-row justify-between py-4  px-4 bg-gray-800 text-white items-center sticky top-0">
+          <div className="hidden md:flex text-2xl flex-col md:flex-row justify-between py-4  px-4 bg-gray-800 text-white items-center sticky top-0">
             <Link to="/" className="">
               mecmarketplace
             </Link>
@@ -41,6 +41,30 @@ function App() {
               )}
             </div>
           </div>
+          <div className="flex flex-col md:hidden justify-between py-2  px-4 bg-gray-800 text-white items-center sticky top-0 w-full">
+            {/* <Link to="/" className="">
+              mecmarketplace
+            </Link>
+            <div className="flex flex-col md:flex-row md:space-x-10 justify-center items-center">
+              <Link to="/products">Browse</Link>
+              {!isAuth ? (
+                <Link to="/login">Login</Link>
+                ) : (
+                  <>
+                  <Link to="/addProduct">Add Product</Link>
+                  <Link to="/mylistings">My Listings </Link>
+                  <button onClick={signUserOut}>Logout</button>
+                </>
+              )}
+            </div>
+          </div> */}
+              <div className="mb-1 text-lg animate-pulse font-medium">mecmarketplace</div>
+              <div className="flex flex-row w-full text-center font-medium text-sm justify-center h-auto">
+                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md">Home</div>
+                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md">Browse</div>
+                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md">Logout</div>
+              </div>
+            </div>
         </nav>
         <Routes>
           <Route path="/" element={<Landing />} />

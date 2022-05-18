@@ -15,8 +15,8 @@ export const ItemBar = ({
   productsellerid,
 }) => {
   return (
-    <div className=" flex flex-col space-y-4 md:space-y-0 md:flex-row items-start bg-white text-gray-700  p-4 rounded-md shadow-lg w-3/4 md:w-1/2">
-      <img src={imageurl} alt="error" className="h-1/3 md:w-1/3 rounded-md shadow-sm " />
+    <div className=" flex flex-col space-y-4 md:space-y-0 md:flex-row items-start bg-white text-gray-700  p-4 rounded-md shadow-lg w-full md:w-1/2">
+      <img src={imageurl} alt="error" className="h-1/6 md:h-1/3 md:w-1/3 rounded-md shadow-sm " />
       <div className=" block w-full py-4">
       <div className="flex-col pl-4 font-medium space-y-2 justify-start w-full block">
       <div className="flex flex-row w-full justify-between font-bold text-xl ">
