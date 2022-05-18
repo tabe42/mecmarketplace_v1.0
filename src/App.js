@@ -58,11 +58,22 @@ function App() {
               )}
             </div>
           </div> */}
-              <div className="mb-1 text-lg animate-pulse font-medium">mecmarketplace</div>
+              <div className="mb-1 text-lg animate-pulse font-medium"> 
+                <Link to="/" className="">
+                  mecmarketplace
+                </Link></div>
               <div className="flex flex-row w-full text-center font-medium text-sm justify-center h-auto">
-                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md">Home</div>
-                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md">Browse</div>
-                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md">Logout</div>
+                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md"><Link to="/addProduct">Sell</Link></div>
+                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md"><Link to="/products">Browse</Link></div>
+                <div className="text-gray-100 hover:bg-gray-50 hover:text-gray-800 px-2 py-2 w-1/3 rounded-xl mx-1 flex items-center justify-center shadow-md">
+                {!isAuth ? (
+                <Link to="/login">Login</Link>
+                ) : (
+                  <>
+                  <button onClick={signUserOut}>Logout</button>
+                </>
+              )}
+                </div>
               </div>
             </div>
         </nav>
