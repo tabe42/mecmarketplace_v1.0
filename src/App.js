@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen font-mono flex flex-col bg-gradient-to-tr from-yellow-400 to-yellow-300 pb-20">
+    <div className="min-h-screen font-mono flex flex-col bg-gradient-to-tr from-gray-200 to-gray-100 pb-20">
     <BrowserRouter>
       <div className="font-mono md:flex flex-col justify-center  pb-20">
         <nav className=" sticky top-0">
