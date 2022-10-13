@@ -1,41 +1,36 @@
 
-# React set up with tailwind
+# MecMarketplace
 
-So I can save a few extra seconds which I can then invest in doing nothing
+- [MecMarketplace](https://mecmarketplace.com/) is a platform that connects students selling used items with buyers
+
+### About MecMarketplace
+- Helps students save money by getting books from their seniors rather than buying fresh copies each semester
+- Sellers can login using their google accounts and list their item on the market along with the asking price, contact information that potential buyers can reach out to
+- Since the transactions are always between two college students, the payment is carried out in person, thereby preventing potential misuse of the platform
 
 
 
 
-## Set up
+### Tech-Stack
+
+ - [ReactJs](https://reactjs.org/docs/getting-started.html)
+ - [Firebase](https://firebase.google.com/docs/firestore)
+ - [Tailwind CSS](https://tailwindcss.com/docs/installation)
 
 
-Clone from git
+### Local set up to add new features
+
+Clone the repository locally
+
 ```bash
-git clone https://github.com/devan-MEC/ReactV18PlusTailwind.git
+git clone https://github.com/tabe42/mecmarketplace_v1.0
 ```
-Change directory into the cloned folder
-```
-cd ReactV18PlusTailwind
-```
-To get npm modules
+
+Install dependencies inside the cloned directory
 ```
 npm install
 ```
-
-## Removing Git Upstreams ( optional )
-To see upstreams
-```
-git remote
-```
-
-To remove upstreams
-```
-git remote remove [upstream_name]
-```
-
-## Starting the project
-Inside the cloned directory
-```
+Start the app
+```bash
 npm run start
 ```
-If you see the text 'Hello World!' underlined, you're good to go!
